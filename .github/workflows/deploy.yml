@@ -1,10 +1,9 @@
 name: Build and deploy to server
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
+  push:
+    tags:
+      - "v*"
 
 jobs:
   deploy:
